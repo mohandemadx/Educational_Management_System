@@ -961,9 +961,10 @@ void Dialog::on_tableWidget_Showall_Stud_cellDoubleClicked(int row, int column)
 }
 void Dialog::on_tableWidget_courses_cellDoubleClicked(int row, int column)
 {
-//    if(registeredStudents.empty())
-//        return;
     QTableWidget*table=ui->tableWidget_courses;
+
+    if(registeredStudents.empty())
+        return;
 
     if(column!=3)
         return;

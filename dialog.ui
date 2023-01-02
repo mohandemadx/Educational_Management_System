@@ -32,7 +32,7 @@
       <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="currentIndex">
-      <number>6</number>
+      <number>7</number>
      </property>
      <widget class="QWidget" name="Loginpage">
       <layout class="QGridLayout" name="gridLayout_4">
@@ -2989,22 +2989,6 @@ border-width: 2px;
            </property>
           </widget>
          </item>
-         <item row="8" column="1" colspan="9">
-          <widget class="QTableWidget" name="tableWidget_courses">
-           <property name="styleSheet">
-            <string notr="true">selection-background-color: rgb(0, 170, 127);
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-alternate-background-color: rgb(0, 170, 127);</string>
-           </property>
-           <property name="alternatingRowColors">
-            <bool>true</bool>
-           </property>
-           <property name="rowCount">
-            <number>0</number>
-           </property>
-          </widget>
-         </item>
          <item row="4" column="3" colspan="7">
           <widget class="QLineEdit" name="lineEdit_output_lecturehall">
            <property name="font">
@@ -3035,6 +3019,22 @@ border-color: rgb(255, 255, 255);
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="8" column="1" colspan="9">
+          <widget class="QTableWidget" name="tableWidget_courses">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(0, 170, 127);
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+alternate-background-color: rgb(0, 170, 127);</string>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="rowCount">
+            <number>0</number>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
