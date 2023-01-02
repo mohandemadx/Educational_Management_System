@@ -18,6 +18,7 @@ Dialog::Dialog(QWidget *parent)
     ui->comboBox_input_hour->setEnabled(false);
     usernamePassword.push_back(std::make_pair("admin","admin"));
 
+
     QTableWidget *table=ui->tableWidget_Showall_Stud;
     table->setColumnCount(7);
     table->setHorizontalHeaderLabels({"firstname","lastname","Email","Mobile","Grade","Age","ID"});
@@ -449,6 +450,17 @@ void Dialog::on_pushButton_addstud_clicked()
     QString mobile=ui->lineEdit_input_mobilestud->text();
     QString grade=ui->comboBox_input_gradestud->currentText();
     QString age=ui->lineEdit_input_agestud->text();
+    QFile file("D:/Project Data/learning_managment_system/csv/Students.csv"); //hena hot path elresource file
+            file.open(QIODevice::Append | QIODevice::Text);
+
+            // Write data to file
+            QTextStream stream(&file);
+            QString separator(",");
+            stream <<id<<','<<firstname<<','<<lastname<<','<<age<<','<<grade<<','<<mobile<<','<<email<<"\n";
+
+
+            stream.flush();
+            file.close();
     bool ok;
     int age1=age.toInt(&ok,10);
      if(ui->lineEdit_input_emailstud->hasAcceptableInput()&&age1>0&&age1<100&&verifyName(firstname)&&verifyName(lastname)){
@@ -1098,5 +1110,23 @@ void Dialog::on_pushButton_32_clicked()
 {
     ui->stackedWidget->setCurrentIndex(11);
     index=8;
+}
+
+
+void Dialog::on_pushButton_33_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(11);
+    index=5;
+}
+
+
+void Dialog::on_infoButton_clicked()
+{
+    QMessageBox mb("About Us", "Paideia is an Educational Management Tool made to make your life easier.",QMessageBox::NoIcon,
+                   QMessageBox::Ok | QMessageBox::Default,
+                   QMessageBox::NoButton,
+                   QMessageBox::NoButton);
+    mb.setStyleSheet("QMessageBox {color: rgb(255, 255, 255);}");
+    mb.exec();
 }
 

@@ -32,7 +32,7 @@
       <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="currentIndex">
-      <number>11</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Loginpage">
       <layout class="QGridLayout" name="gridLayout_4">
@@ -553,7 +553,7 @@ border-image: url(:/img/img/Untitled design (1).jpg) 0 0 0 0 stretch stretch;</s
           </widget>
          </item>
          <item row="0" column="1" colspan="2">
-          <widget class="QPushButton" name="pushButton_24">
+          <widget class="QPushButton" name="infoButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -1819,6 +1819,33 @@ border-color: rgb(255, 255, 255);
          </property>
         </spacer>
        </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_9">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>76</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(0, 170, 127);
+border-width: 2px;        
+  border-style: solid;
+  border-radius: 15px;
+  padding:5px;</string>
+         </property>
+         <property name="text">
+          <string>Back</string>
+         </property>
+        </widget>
+       </item>
        <item row="3" column="1">
         <widget class="QFrame" name="frame_3">
          <property name="frameShape">
@@ -1828,6 +1855,19 @@ border-color: rgb(255, 255, 255);
           <enum>QFrame::Sunken</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_19">
+          <item row="3" column="0">
+           <spacer name="verticalSpacer_21">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item row="0" column="0" colspan="2">
            <widget class="QLabel" name="label_48">
             <property name="font">
@@ -1846,7 +1886,7 @@ border-color: rgb(255, 255, 255);
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
+          <item row="7" column="0">
            <spacer name="verticalSpacer_6">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -1858,6 +1898,26 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
            </spacer>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QPushButton" name="pushButton_33">
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+border-width: 2px;        
+  border-style: solid;
+  border-radius: 20px;
+  padding:4px;</string>
+            </property>
+            <property name="text">
+             <string>Show Existing Courses</string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0" colspan="2">
            <widget class="QPushButton" name="pushButton_14">
@@ -1879,6 +1939,18 @@ border-width: 2px;
             </property>
            </widget>
           </item>
+          <item row="5" column="0" colspan="2" alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="label_21">
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Or you can see all courses from here</string>
+            </property>
+           </widget>
+          </item>
           <item row="1" column="0" colspan="2">
            <widget class="QComboBox" name="comboBox_searchcourse">
             <property name="font">
@@ -1894,10 +1966,23 @@ border-width: 2px;
             </property>
            </widget>
           </item>
+          <item row="4" column="0">
+           <spacer name="verticalSpacer_30">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
          </layout>
         </widget>
        </item>
-       <item row="5" column="0">
+       <item row="4" column="0">
         <widget class="QFrame" name="frame_5">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -2018,19 +2103,6 @@ border-color: rgb(255, 255, 255);
             </property>
            </widget>
           </item>
-          <item row="6" column="3">
-           <spacer name="horizontalSpacer_32">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="1" column="0">
            <spacer name="verticalSpacer_25">
             <property name="orientation">
@@ -2116,7 +2188,7 @@ border-width: 2px;
               </property>
              </widget>
             </item>
-            <item row="3" column="0">
+            <item row="4" column="0">
              <spacer name="verticalSpacer_5">
               <property name="orientation">
                <enum>Qt::Vertical</enum>
@@ -2134,23 +2206,7 @@ border-width: 2px;
          </layout>
         </widget>
        </item>
-       <item row="4" column="0">
-        <spacer name="verticalSpacer_26">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>4</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="5" column="1">
+       <item row="4" column="1">
         <widget class="QFrame" name="frame_4">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -2302,47 +2358,7 @@ border-color: rgb(255, 255, 255);
             </property>
            </widget>
           </item>
-          <item row="2" column="2">
-           <spacer name="horizontalSpacer_77">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
          </layout>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="2">
-        <widget class="QPushButton" name="pushButton_9">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>76</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(0, 170, 127);
-border-width: 2px;        
-  border-style: solid;
-  border-radius: 15px;
-  padding:5px;</string>
-         </property>
-         <property name="text">
-          <string>Back</string>
-         </property>
         </widget>
        </item>
       </layout>
@@ -4780,7 +4796,7 @@ border-color: rgb(255, 255, 255);
   <tabstop>lineEdit_password</tabstop>
   <tabstop>pushButton</tabstop>
   <tabstop>pushButton_22</tabstop>
-  <tabstop>pushButton_24</tabstop>
+  <tabstop>infoButton</tabstop>
   <tabstop>pushButton_27</tabstop>
   <tabstop>pushButton_goToStudents</tabstop>
   <tabstop>pushButton_goTOPRofessors</tabstop>

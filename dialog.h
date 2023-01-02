@@ -130,6 +130,10 @@ private slots:
 
     void on_pushButton_32_clicked();
 
+    void on_pushButton_33_clicked();
+
+    void on_infoButton_clicked();
+
 private:
     Ui::Dialog *ui;
     QVector< QPair <QString,QString> > usernamePassword;
