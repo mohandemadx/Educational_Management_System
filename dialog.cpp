@@ -8,6 +8,7 @@
 #include<string>
 int id=1;
 int index=0;
+int index2=0;
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Dialog)
@@ -26,10 +27,13 @@ Dialog::Dialog(QWidget *parent)
     studtable->setColumnCount(2);
     studtable->setHorizontalHeaderLabels({"Course","Grade"});
     QTableWidget*coursestable=ui->tableWidget_courses;
-    coursestable->setColumnCount(4);
-    coursestable->setHorizontalHeaderLabels({"Students","Grades","Professors","Students ID"});
+    coursestable->setColumnCount(3);
+    coursestable->setHorizontalHeaderLabels({"Students","Grades","Students ID"});
     QTableWidget*professortable=ui->tableWidget_displayprofessor;
     professortable->setColumnCount(1);
+    QTableWidget*courseprof=ui->tableWidget_courseProf;
+    courseprof->setColumnCount(1);
+    courseprof->setHorizontalHeaderLabels({"Professor Name"});
     professortable->setHorizontalHeaderLabels({"Courses"});
     QComboBox*box=ui->comboBox_input_day;
 
@@ -217,10 +221,10 @@ void Dialog::on_pushButton_goToStudents_clicked()
 }
 void Dialog::on_pushButton_4_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(index2);
     QTableWidget*studtable=ui->tableWidget_stud1;
     studtable->clearContents();
-    studtable->setRowCount(1);
+    studtable->setRowCount(0);
 }
 void Dialog::on_pushButton_5_clicked()
 {
@@ -228,7 +232,7 @@ void Dialog::on_pushButton_5_clicked()
     ui->stackedWidget->setCurrentIndex(1);
     QTableWidget*studtable=ui->tableWidget_stud1;
     studtable->clearContents();
-    studtable->setRowCount(1);
+    studtable->setRowCount(0);
 
 }
 void Dialog::on_pushButton_15_clicked()
@@ -266,14 +270,18 @@ void Dialog::on_pushButton_17_clicked()
      ui->stackedWidget->setCurrentIndex(5);
      QTableWidget*coursetable=ui->tableWidget_courses;
      coursetable->clearContents();
-     coursetable->setRowCount(1);
+     coursetable->setRowCount(0);
+     ui->tableWidget_courseProf->clearContents();
+     ui->tableWidget_courseProf->setRowCount(0);
 }
 void Dialog::on_pushButton_18_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
     QTableWidget*coursetable=ui->tableWidget_courses;
     coursetable->clearContents();
-    coursetable->setRowCount(1);
+    coursetable->setRowCount(0);
+    ui->tableWidget_courseProf->clearContents();
+    ui->tableWidget_courseProf->setRowCount(0);
 }
 void Dialog::on_pushButton_26_clicked()
 {
@@ -288,14 +296,14 @@ void Dialog::on_pushButton_42_clicked()
     ui->stackedWidget->setCurrentIndex(8);
     QTableWidget*professortable=ui->tableWidget_displayprofessor;
     professortable->clearContents();
-    professortable->setRowCount(1);
+    professortable->setRowCount(0);
 }
 void Dialog::on_pushButton_43_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
     QTableWidget*professortable=ui->tableWidget_displayprofessor;
     professortable->clearContents();
-    professortable->setRowCount(1);
+    professortable->setRowCount(0);
 }
 void Dialog::on_pushButton_9_clicked()
 {
@@ -349,9 +357,11 @@ void Dialog::on_pushButton_8_clicked()
          professortable->setEnabled(false);
          vector<Course*>getcourses=registeredProfessors[index].getCourses();
          for (int i = 0; i <getcourses.size() ; ++i) {
+
               QTableWidgetItem*coursewidget=new QTableWidgetItem(getcourses[i]->getName());
-              professortable->setItem(professortable->rowCount()-1,0,coursewidget);
               professortable->insertRow(professortable->rowCount());
+              professortable->setItem(professortable->rowCount()-1,0,coursewidget);
+
          }
          professortable->resizeColumnsToContents();
          professortable->resizeRowsToContents();
@@ -534,6 +544,7 @@ void Dialog::on_pushButton_addstud_clicked()
 }
 void Dialog::on_pushButton_3_clicked()
 {
+    index2=2;
     QString ID=ui->lineEdit_search_stud_ID->text();
     int id=ID.toInt();
     bool found=false;
@@ -570,13 +581,15 @@ void Dialog::on_pushButton_3_clicked()
         QTableWidget*studtable=ui->tableWidget_stud1;
         studtable->setEnabled(false);
         vector<pair<Course*,double>>coursess=registeredStudents[index].getMarksForEveryCourse();
+
         for (int i = 0; i < coursess.size(); ++i) {
             QString grade=QString::number(coursess[i].second);
             QTableWidgetItem*coursenamewidget=new QTableWidgetItem(coursess[i].first->getName());
             QTableWidgetItem*coursegradewidget=new QTableWidgetItem(grade);
+            studtable->insertRow(studtable->rowCount());
             studtable->setItem(studtable->rowCount()-1,0,coursenamewidget);
             studtable->setItem(studtable->rowCount()-1,1,coursegradewidget);
-            studtable->insertRow(studtable->rowCount());
+
 
         }
         studtable->resizeColumnsToContents();
@@ -718,13 +731,22 @@ void Dialog::on_pushButton_14_clicked()
         ui->lineEdit_output_day->setEnabled(false);
         ui->lineEdit_output_hour->setEnabled(false);
         ui->lineEdit_output_course_code->setEnabled(false);
-       // ui->tableWidget_courses->setEnabled(false);
+        // ui->tableWidget_courses->setEnabled(false);
+
+        QTableWidget*coursetable=ui->tableWidget_courses;
+        coursetable->clearContents();
+        coursetable->setRowCount(0);
+        ui->tableWidget_courseProf->clearContents();
+        ui->tableWidget_courseProf->setRowCount(0);
+
         QTableWidget*tablecourses=ui->tableWidget_courses;
         tablecourses->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
        vector<Student*>enrolledStudnets=registeredCourses[index].getEnrolledStudentsInCourses();
-       vector<Professor*> profName=registeredCourses[index].getProfessors();
+
        for (int i = 0; i < enrolledStudnets.size(); ++i) {
+           tablecourses->insertRow(tablecourses->rowCount());
+
            double studentgrades=enrolledStudnets[i]->getGradesForCertainCourse(coursename);
            QString grade=QString::number(studentgrades);
            QTableWidgetItem*fullnamewidget=new QTableWidgetItem(enrolledStudnets[i]->getFirstName() + enrolledStudnets[i]->getLastName());
@@ -735,20 +757,20 @@ void Dialog::on_pushButton_14_clicked()
            tablecourses->setItem(tablecourses->rowCount()-1,0,fullnamewidget);
            tablecourses->setItem(tablecourses->rowCount()-1,1,gradewidget);
            qDebug()<<enrolledStudnets[i]->getId();
-           tablecourses->setItem(tablecourses->rowCount()-1,3,idwidget);
-           tablecourses->insertRow(tablecourses->rowCount());
+           tablecourses->setItem(tablecourses->rowCount()-1,2,idwidget);
+
 
            }
 
-       for (int i = 0; i < profName.size(); ++i) {
+       QTableWidget*tableprof=ui->tableWidget_courseProf;
+       tableprof->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-
-               QTableWidgetItem*profnamewidget=new QTableWidgetItem(profName[i]->getFirstName()+profName[i]->getLastName());
-               if(profName.size()>tablecourses->rowCount())
-                  tablecourses->insertRow(tablecourses->rowCount());
-                tablecourses->setItem(i,2,profnamewidget);
-
-       }
+        vector<Professor*> profName=registeredCourses[index].getProfessors();
+           for (int i = 0; i < profName.size(); ++i) {
+                   QTableWidgetItem*profnamewidget=new QTableWidgetItem(profName[i]->getFirstName()+profName[i]->getLastName());
+                        tableprof->insertRow(tableprof->rowCount());
+                      tableprof->setItem(tableprof->rowCount()-1,0,profnamewidget);
+           }
        //for (int i = 0; i < profName.size(); ++i) {
            //QTableWidgetItem*profnamewidget=new QTableWidgetItem(profName[i]->getFirstName()+profName[i]->getLastName());
            //if(profName.size()>tablecourses->rowCount())
@@ -756,6 +778,8 @@ void Dialog::on_pushButton_14_clicked()
         //   tablecourses->setItem(tablecourses->rowCount(),2,profnamewidget);
 
       // }
+           tableprof->resizeColumnsToContents();
+           tableprof->resizeRowsToContents();
        tablecourses->resizeColumnsToContents();
        tablecourses->resizeRowsToContents();
        ui->stackedWidget->setCurrentIndex(7);
@@ -778,6 +802,17 @@ void Dialog::on_pushButton_19_clicked()
     QString chosencourse=ui->comboBox_choosecourse_addstud->currentText();
     QString marksScored=ui->lineEdit_scoredmarks_addstud->text();
     double marks=marksScored.toDouble();
+    if(verifyName(firstname)&&verifyName(lastname)&&marks>=0&&marks<=100){
+
+    }
+    else{
+        QMessageBox mb("Warning", "Invalid Input.",QMessageBox::NoIcon,
+                       QMessageBox::Ok | QMessageBox::Default,
+                       QMessageBox::NoButton,
+                       QMessageBox::NoButton);
+        mb.setStyleSheet("QMessageBox {color: rgb(255, 255, 255);}");
+        mb.exec();
+    }
     bool found=false;
     int index;
     int courseindex;
@@ -961,12 +996,13 @@ void Dialog::on_tableWidget_Showall_Stud_cellDoubleClicked(int row, int column)
 }
 void Dialog::on_tableWidget_courses_cellDoubleClicked(int row, int column)
 {
+    index2=7;
     QTableWidget*table=ui->tableWidget_courses;
 
     if(registeredStudents.empty())
         return;
 
-    if(column!=3)
+    if(column!=2)
         return;
 
     QString getid=table->item(row,column)->text();
