@@ -8,7 +8,7 @@
 #include<string>
 int id=1;
 int index=0;
-int index2=0;
+int lol=0;
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Dialog)
@@ -221,7 +221,7 @@ void Dialog::on_pushButton_goToStudents_clicked()
 }
 void Dialog::on_pushButton_4_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(index2);
+    ui->stackedWidget->setCurrentIndex(lol);
     QTableWidget*studtable=ui->tableWidget_stud1;
     studtable->clearContents();
     studtable->setRowCount(0);
@@ -268,6 +268,7 @@ void Dialog::on_pushButton_13_clicked()
 void Dialog::on_pushButton_17_clicked()
 {
      ui->stackedWidget->setCurrentIndex(5);
+
      QTableWidget*coursetable=ui->tableWidget_courses;
      coursetable->clearContents();
      coursetable->setRowCount(0);
@@ -544,7 +545,7 @@ void Dialog::on_pushButton_addstud_clicked()
 }
 void Dialog::on_pushButton_3_clicked()
 {
-    index2=2;
+    lol=2;
     QString ID=ui->lineEdit_search_stud_ID->text();
     int id=ID.toInt();
     bool found=false;
@@ -996,7 +997,7 @@ void Dialog::on_tableWidget_Showall_Stud_cellDoubleClicked(int row, int column)
 }
 void Dialog::on_tableWidget_courses_cellDoubleClicked(int row, int column)
 {
-    index2=7;
+
     QTableWidget*table=ui->tableWidget_courses;
 
     if(registeredStudents.empty())
@@ -1008,6 +1009,7 @@ void Dialog::on_tableWidget_courses_cellDoubleClicked(int row, int column)
     QString getid=table->item(row,column)->text();
     ui->lineEdit_search_stud_ID->setText(getid);
     on_pushButton_3_clicked();
+    lol=7;
 }
 void Dialog::on_comboBox_input_day_currentIndexChanged(int index)
 {
