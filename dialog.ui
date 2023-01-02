@@ -745,9 +745,6 @@ border-color: rgb(255, 255, 255);
   border-radius: 20px;
   padding:5px;</string>
            </property>
-           <property name="text">
-            <string/>
-           </property>
            <property name="frame">
             <bool>true</bool>
            </property>
@@ -756,6 +753,12 @@ border-color: rgb(255, 255, 255);
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
            </property>
            <property name="placeholderText">
             <string>Enter Student ID</string>
@@ -976,7 +979,28 @@ border-width: 2px;
           <enum>QFrame::NoFrame</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
-          <item row="6" column="3" colspan="5">
+          <item row="0" column="7">
+           <widget class="QPushButton" name="pushButton_homepagestud">
+            <property name="minimumSize">
+             <size>
+              <width>90</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(0, 170, 127);
+border-width: 2px;        
+  border-style: solid;
+  border-radius: 15px;
+  padding:5px;</string>
+            </property>
+            <property name="text">
+             <string>Home Page</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2" colspan="5">
            <widget class="QPushButton" name="pushButton_addstud">
             <property name="font">
              <font>
@@ -996,7 +1020,7 @@ border-width: 2px;
             </property>
            </widget>
           </item>
-          <item row="7" column="2" colspan="6">
+          <item row="6" column="1" colspan="6">
            <spacer name="verticalSpacer_4">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -1009,7 +1033,34 @@ border-width: 2px;
             </property>
            </spacer>
           </item>
-          <item row="5" column="2" colspan="5">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_back">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>90</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(0, 170, 127);
+border-width: 2px;        
+  border-style: solid;
+  border-radius: 15px;
+  padding:5px;</string>
+            </property>
+            <property name="text">
+             <string>Back</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1" colspan="5">
            <widget class="QLineEdit" name="lineEdit_input_mobilestud">
             <property name="font">
              <font>
@@ -1033,7 +1084,7 @@ border-color: rgb(255, 255, 255);
             </property>
            </widget>
           </item>
-          <item row="5" column="7">
+          <item row="4" column="6">
            <widget class="QLineEdit" name="lineEdit_input_agestud">
             <property name="font">
              <font>
@@ -1060,46 +1111,31 @@ border-color: rgb(255, 255, 255);
             </property>
            </widget>
           </item>
-          <item row="8" column="4">
-           <spacer name="horizontalSpacer_4">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+          <item row="2" column="4" colspan="3">
+           <widget class="QLineEdit" name="lineEdit_input_lastnamestud">
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+
+border-width: 2px;        
+  border-style: solid;
+border-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding:5px;</string>
             </property>
-           </spacer>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="placeholderText">
+             <string> Last name</string>
+            </property>
+           </widget>
           </item>
-          <item row="8" column="6">
-           <spacer name="horizontalSpacer_24">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="8" column="3">
-           <spacer name="horizontalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="8" column="2">
+          <item row="7" column="1">
            <spacer name="horizontalSpacer_28">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -1112,7 +1148,33 @@ border-color: rgb(255, 255, 255);
             </property>
            </spacer>
           </item>
-          <item row="3" column="2" colspan="3">
+          <item row="7" column="6">
+           <spacer name="horizontalSpacer_26">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="7" column="0">
+           <spacer name="horizontalSpacer_33">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="1" colspan="3">
            <widget class="QLineEdit" name="lineEdit_input_firstnamestudent">
             <property name="font">
              <font>
@@ -1136,67 +1198,7 @@ border-color: rgb(255, 255, 255);
             </property>
            </widget>
           </item>
-          <item row="8" column="7">
-           <spacer name="horizontalSpacer_26">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="8" column="0">
-           <spacer name="horizontalSpacer_33">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="8" column="1">
-           <spacer name="horizontalSpacer_71">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="9">
-           <widget class="QPushButton" name="pushButton_homepagestud">
-            <property name="minimumSize">
-             <size>
-              <width>90</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(0, 170, 127);
-border-width: 2px;        
-  border-style: solid;
-  border-radius: 15px;
-  padding:5px;</string>
-            </property>
-            <property name="text">
-             <string>Home Page</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="9">
+          <item row="7" column="7">
            <spacer name="horizontalSpacer_34">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -1209,7 +1211,7 @@ border-width: 2px;
             </property>
            </spacer>
           </item>
-          <item row="6" column="2">
+          <item row="5" column="1">
            <widget class="QComboBox" name="comboBox_input_gradestud">
             <property name="font">
              <font>
@@ -1266,20 +1268,7 @@ border-width: 2px;
             </item>
            </widget>
           </item>
-          <item row="8" column="5">
-           <spacer name="horizontalSpacer_25">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="4" column="2" colspan="6">
+          <item row="3" column="1" colspan="6">
            <widget class="QLineEdit" name="lineEdit_input_emailstud">
             <property name="font">
              <font>
@@ -1303,20 +1292,7 @@ border-color: rgb(255, 255, 255);
             </property>
            </widget>
           </item>
-          <item row="8" column="8">
-           <spacer name="horizontalSpacer_72">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="3" colspan="4">
+          <item row="1" column="2" colspan="4">
            <spacer name="verticalSpacer_3">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -1329,31 +1305,59 @@ border-color: rgb(255, 255, 255);
             </property>
            </spacer>
           </item>
-          <item row="3" column="5" colspan="3">
-           <widget class="QLineEdit" name="lineEdit_input_lastnamestud">
-            <property name="font">
-             <font>
-              <pointsize>16</pointsize>
-             </font>
+          <item row="7" column="2">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);
-
-border-width: 2px;        
-  border-style: solid;
-border-color: rgb(255, 255, 255);
-  border-radius: 20px;
-  padding:5px;</string>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-            <property name="placeholderText">
-             <string> Last name</string>
-            </property>
-           </widget>
+           </spacer>
           </item>
-          <item row="1" column="5">
+          <item row="7" column="3">
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="7" column="5">
+           <spacer name="horizontalSpacer_24">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="7" column="4">
+           <spacer name="horizontalSpacer_25">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="2" colspan="4">
            <widget class="QLabel" name="label_12">
             <property name="maximumSize">
              <size>
@@ -1369,33 +1373,6 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="scaledContents">
              <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QPushButton" name="pushButton_back">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>90</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(0, 170, 127);
-border-width: 2px;        
-  border-style: solid;
-  border-radius: 15px;
-  padding:5px;</string>
-            </property>
-            <property name="text">
-             <string>Back</string>
             </property>
            </widget>
           </item>
@@ -1426,6 +1403,9 @@ border-width: 2px;
 color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);
 alternate-background-color: rgb(0, 170, 127);</string>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
          </property>
          <row>
           <property name="text">
@@ -2154,33 +2134,6 @@ border-width: 2px;
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="pushButton_9">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>76</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(0, 170, 127);
-border-width: 2px;        
-  border-style: solid;
-  border-radius: 15px;
-  padding:5px;</string>
-         </property>
-         <property name="text">
-          <string>Back</string>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="0">
         <spacer name="verticalSpacer_26">
          <property name="orientation">
@@ -2363,6 +2316,33 @@ border-color: rgb(255, 255, 255);
            </spacer>
           </item>
          </layout>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_9">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>76</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(0, 170, 127);
+border-width: 2px;        
+  border-style: solid;
+  border-radius: 15px;
+  padding:5px;</string>
+         </property>
+         <property name="text">
+          <string>Back</string>
+         </property>
         </widget>
        </item>
       </layout>
@@ -2712,19 +2692,6 @@ border-width: 2px;
       <layout class="QGridLayout" name="gridLayout_28">
        <item row="0" column="1">
         <layout class="QGridLayout" name="gridLayout_27">
-         <item row="1" column="6">
-          <spacer name="horizontalSpacer_92">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
          <item row="4" column="1" colspan="2">
           <widget class="QLabel" name="label_52">
            <property name="font">
@@ -2740,7 +2707,7 @@ border-width: 2px;
            </property>
           </widget>
          </item>
-         <item row="2" column="3" colspan="6">
+         <item row="2" column="3" colspan="7">
           <widget class="QLineEdit" name="lineEdit_output_coursename">
            <property name="font">
             <font>
@@ -2770,6 +2737,24 @@ border-color: rgb(255, 255, 255);
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="5" column="5" colspan="5">
+          <widget class="QLineEdit" name="lineEdit_output_hour">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+
+border-width: 2px;        
+  border-style: solid;
+border-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding:2px;</string>
+           </property>
+          </widget>
          </item>
          <item row="1" column="2">
           <spacer name="horizontalSpacer_96">
@@ -2827,7 +2812,7 @@ border-color: rgb(255, 255, 255);
            </property>
           </spacer>
          </item>
-         <item row="3" column="3" colspan="6">
+         <item row="3" column="3" colspan="7">
           <widget class="QLineEdit" name="lineEdit_output_course_code">
            <property name="font">
             <font>
@@ -2858,43 +2843,7 @@ border-color: rgb(255, 255, 255);
            </property>
           </spacer>
          </item>
-         <item row="5" column="7" colspan="2">
-          <widget class="QLineEdit" name="lineEdit_output_hour">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);
-
-border-width: 2px;        
-  border-style: solid;
-border-color: rgb(255, 255, 255);
-  border-radius: 15px;
-  padding:2px;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="3" colspan="2">
-          <widget class="QLineEdit" name="lineEdit_output_day">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);
-
-border-width: 2px;        
-  border-style: solid;
-border-color: rgb(255, 255, 255);
-  border-radius: 15px;
-  padding:2px;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="7">
+         <item row="1" column="8">
           <spacer name="horizontalSpacer_83">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -2907,7 +2856,7 @@ border-color: rgb(255, 255, 255);
            </property>
           </spacer>
          </item>
-         <item row="1" column="8">
+         <item row="1" column="9">
           <spacer name="horizontalSpacer_97">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -2920,7 +2869,7 @@ border-color: rgb(255, 255, 255);
            </property>
           </spacer>
          </item>
-         <item row="0" column="9">
+         <item row="0" column="10">
           <widget class="QPushButton" name="pushButton_18">
            <property name="minimumSize">
             <size>
@@ -2941,19 +2890,6 @@ border-width: 2px;
            </property>
           </widget>
          </item>
-         <item row="5" column="5">
-          <spacer name="horizontalSpacer_99">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
          <item row="5" column="1" colspan="2">
           <widget class="QLabel" name="label_53">
            <property name="font">
@@ -2969,7 +2905,7 @@ border-width: 2px;
            </property>
           </widget>
          </item>
-         <item row="1" column="9">
+         <item row="1" column="10">
           <spacer name="horizontalSpacer_84">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -2981,6 +2917,39 @@ border-width: 2px;
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="5" column="4">
+          <widget class="QLabel" name="label_54">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Time</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <widget class="QLineEdit" name="lineEdit_output_day">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+
+border-width: 2px;        
+  border-style: solid;
+border-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding:2px;</string>
+           </property>
+          </widget>
          </item>
          <item row="0" column="0">
           <widget class="QPushButton" name="pushButton_17">
@@ -3009,26 +2978,16 @@ border-width: 2px;
            </property>
           </widget>
          </item>
-         <item row="1" column="4">
-          <spacer name="horizontalSpacer_93">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="8" column="1" colspan="8">
+         <item row="8" column="1" colspan="9">
           <widget class="QTableWidget" name="tableWidget_courses">
            <property name="styleSheet">
             <string notr="true">selection-background-color: rgb(0, 170, 127);
 color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);
 alternate-background-color: rgb(0, 170, 127);</string>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
            </property>
            <row>
             <property name="text">
@@ -3037,22 +2996,7 @@ alternate-background-color: rgb(0, 170, 127);</string>
            </row>
           </widget>
          </item>
-         <item row="5" column="6">
-          <widget class="QLabel" name="label_54">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Time</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="3" colspan="6">
+         <item row="4" column="3" colspan="7">
           <widget class="QLineEdit" name="lineEdit_output_lecturehall">
            <property name="font">
             <font>
@@ -3070,27 +3014,18 @@ border-color: rgb(255, 255, 255);
            </property>
           </widget>
          </item>
-         <item row="0" column="4" colspan="2">
-          <widget class="QLabel" name="label_21">
-           <property name="maximumSize">
+         <item row="1" column="5" colspan="3">
+          <spacer name="horizontalSpacer_92">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
             <size>
-             <width>200</width>
-             <height>50</height>
+             <width>40</width>
+             <height>20</height>
             </size>
            </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="resources.qrc">:/img/img/333.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -3100,8 +3035,8 @@ border-color: rgb(255, 255, 255);
       <layout class="QGridLayout" name="gridLayout_9">
        <item row="0" column="0">
         <layout class="QGridLayout" name="gridLayout_8">
-         <item row="1" column="3" colspan="2">
-          <spacer name="verticalSpacer_7">
+         <item row="4" column="3" colspan="2">
+          <spacer name="verticalSpacer_20">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
@@ -3113,20 +3048,7 @@ border-color: rgb(255, 255, 255);
            </property>
           </spacer>
          </item>
-         <item row="5" column="3">
-          <spacer name="verticalSpacer_19">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="6" column="3" colspan="2">
+         <item row="10" column="3" colspan="2">
           <widget class="QLabel" name="label_3">
            <property name="font">
             <font>
@@ -3144,19 +3066,6 @@ border-color: rgb(255, 255, 255);
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <spacer name="horizontalSpacer_9">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
          <item row="1" column="1">
           <spacer name="horizontalSpacer_18">
            <property name="orientation">
@@ -3173,7 +3082,33 @@ border-color: rgb(255, 255, 255);
            </property>
           </spacer>
          </item>
-         <item row="2" column="3" colspan="2">
+         <item row="1" column="0">
+          <spacer name="horizontalSpacer_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="12" column="3" colspan="2">
+          <spacer name="verticalSpacer_18">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="5" column="3" colspan="2">
           <widget class="QLabel" name="label">
            <property name="font">
             <font>
@@ -3201,7 +3136,7 @@ border-color: rgb(255, 255, 255);
            </property>
           </spacer>
          </item>
-         <item row="3" column="4">
+         <item row="7" column="4">
           <widget class="QLineEdit" name="lineEdit_lastname_search_prof">
            <property name="font">
             <font>
@@ -3224,6 +3159,12 @@ border-color: rgb(255, 255, 255);
          </item>
          <item row="0" column="0">
           <widget class="QPushButton" name="pushButton_10">
+           <property name="minimumSize">
+            <size>
+             <width>93</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(0, 170, 127);
@@ -3237,7 +3178,7 @@ border-width: 2px;
            </property>
           </widget>
          </item>
-         <item row="7" column="3">
+         <item row="11" column="3">
           <widget class="QPushButton" name="pushButton_7">
            <property name="minimumSize">
             <size>
@@ -3276,7 +3217,7 @@ border-width: 2px;
            </property>
           </spacer>
          </item>
-         <item row="3" column="3">
+         <item row="7" column="3">
           <widget class="QLineEdit" name="lineEdit_firstname_searchProf">
            <property name="font">
             <font>
@@ -3300,7 +3241,7 @@ border-color: rgb(255, 255, 255);
            </property>
           </widget>
          </item>
-         <item row="4" column="3" colspan="2">
+         <item row="8" column="3" colspan="2">
           <widget class="QPushButton" name="pushButton_8">
            <property name="font">
             <font>
@@ -3339,7 +3280,7 @@ color: rgb(0, 0, 0);
            </property>
           </widget>
          </item>
-         <item row="7" column="4">
+         <item row="11" column="4">
           <widget class="QPushButton" name="pushButton_32">
            <property name="font">
             <font>
@@ -3359,14 +3300,30 @@ border-width: 2px;
            </property>
           </widget>
          </item>
+         <item row="9" column="3" colspan="2">
+          <spacer name="verticalSpacer_19">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
          <item row="1" column="7">
           <spacer name="horizontalSpacer_67">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>40</width>
+             <width>93</width>
              <height>20</height>
             </size>
            </property>
@@ -3385,15 +3342,18 @@ border-width: 2px;
            </property>
           </spacer>
          </item>
-         <item row="8" column="3" colspan="2">
-          <spacer name="verticalSpacer_18">
+         <item row="6" column="3" colspan="2">
+          <spacer name="verticalSpacer_7">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
              <width>20</width>
-             <height>40</height>
+             <height>4</height>
             </size>
            </property>
           </spacer>
@@ -3745,26 +3705,33 @@ border-color: rgb(255, 255, 255);
          </item>
         </layout>
        </item>
+       <item row="0" column="3" colspan="2">
+        <widget class="QLabel" name="label_23">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="resources.qrc">:/img/img/333.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="page_3">
       <layout class="QGridLayout" name="gridLayout_33">
        <item row="0" column="0">
         <layout class="QGridLayout" name="gridLayout_32">
-         <item row="6" column="1">
-          <widget class="QLabel" name="label_117">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Age</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="2">
-          <widget class="QLineEdit" name="lineEdit_output_age_prof">
+         <item row="1" column="4">
+          <widget class="QLineEdit" name="lineEdit_output_lastname_prof">
            <property name="font">
             <font>
              <pointsize>16</pointsize>
@@ -3802,6 +3769,42 @@ border-width: 2px;
            </property>
           </widget>
          </item>
+         <item row="3" column="2" colspan="3">
+          <widget class="QLineEdit" name="lineEdit_output_email_prof">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+
+border-width: 2px;        
+  border-style: solid;
+border-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding:2px;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1" colspan="4">
+          <widget class="QTableWidget" name="tableWidget_displayprofessor">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(0, 170, 127);
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+alternate-background-color: rgb(0, 170, 127);</string>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <row>
+            <property name="text">
+             <string/>
+            </property>
+           </row>
+          </widget>
+         </item>
          <item row="3" column="1">
           <widget class="QLabel" name="label_113">
            <property name="font">
@@ -3809,8 +3812,29 @@ border-width: 2px;
              <pointsize>16</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>Email      </string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2" colspan="3">
+          <widget class="QLineEdit" name="lineEdit_output_title_prof">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+
+border-width: 2px;        
+  border-style: solid;
+border-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding:2px;</string>
            </property>
           </widget>
          </item>
@@ -3842,8 +3866,26 @@ border-width: 2px;
              <pointsize>16</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string> Last Name </string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLabel" name="label_114">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string> Title        </string>
            </property>
           </widget>
          </item>
@@ -3853,6 +3895,9 @@ border-width: 2px;
             <font>
              <pointsize>16</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
             <string>First Name </string>
@@ -3878,6 +3923,21 @@ border-color: rgb(255, 255, 255);
            </property>
           </widget>
          </item>
+         <item row="7" column="1">
+          <widget class="QLabel" name="label_117">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Age</string>
+           </property>
+          </widget>
+         </item>
          <item row="5" column="1">
           <widget class="QLabel" name="label_118">
            <property name="font">
@@ -3885,56 +3945,11 @@ border-color: rgb(255, 255, 255);
              <pointsize>16</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>Mobile   </string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="4">
-          <widget class="QLineEdit" name="lineEdit_output_lastname_prof">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);
-
-border-width: 2px;        
-  border-style: solid;
-border-color: rgb(255, 255, 255);
-  border-radius: 15px;
-  padding:2px;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="3">
-          <widget class="QLabel" name="label_114">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string> Title        </string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="4">
-          <widget class="QLineEdit" name="lineEdit_output_title_prof">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);
-
-border-width: 2px;        
-  border-style: solid;
-border-color: rgb(255, 255, 255);
-  border-radius: 15px;
-  padding:2px;</string>
            </property>
           </widget>
          </item>
@@ -3957,8 +3972,8 @@ border-color: rgb(255, 255, 255);
            </property>
           </widget>
          </item>
-         <item row="3" column="2" colspan="3">
-          <widget class="QLineEdit" name="lineEdit_output_email_prof">
+         <item row="7" column="2" colspan="3">
+          <widget class="QLineEdit" name="lineEdit_output_age_prof">
            <property name="font">
             <font>
              <pointsize>16</pointsize>
@@ -3973,20 +3988,6 @@ border-color: rgb(255, 255, 255);
   border-radius: 15px;
   padding:2px;</string>
            </property>
-          </widget>
-         </item>
-         <item row="8" column="1" colspan="4">
-          <widget class="QTableWidget" name="tableWidget_displayprofessor">
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <column>
-            <property name="text">
-             <string>Courses</string>
-            </property>
-           </column>
           </widget>
          </item>
         </layout>
@@ -4182,6 +4183,9 @@ color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);
 alternate-background-color: rgb(0, 170, 127);</string>
                </property>
+               <property name="alternatingRowColors">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item row="0" column="0">
@@ -4233,6 +4237,9 @@ color: rgb(255, 255, 255);</string>
 color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);
 alternate-background-color: rgb(0, 170, 127);</string>
+               </property>
+               <property name="alternatingRowColors">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -4415,30 +4422,6 @@ border-width: 2px;
       <layout class="QGridLayout" name="gridLayout_7">
        <item row="0" column="0">
         <layout class="QGridLayout" name="gridLayout_5">
-         <item row="3" column="1" colspan="6">
-          <widget class="QLineEdit" name="lineEdit_username_signUp">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);
-
-border-width: 2px;        
-  border-style: solid;
-border-color: rgb(255, 255, 255);
-  border-radius: 20px;
-  padding:5px;</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="placeholderText">
-            <string>Create your username</string>
-           </property>
-          </widget>
-         </item>
          <item row="10" column="5">
           <spacer name="horizontalSpacer_65">
            <property name="orientation">
@@ -4464,6 +4447,38 @@ border-color: rgb(255, 255, 255);
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="6" column="3" colspan="2" alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="pushButton_SignUp">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>190</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(0, 170, 127);
+border-width: 2px;        
+  border-style: solid;
+  border-radius: 20px;
+  padding:5px;</string>
+           </property>
+           <property name="text">
+            <string>SignUp</string>
+           </property>
+          </widget>
          </item>
          <item row="6" column="0" colspan="3">
           <spacer name="horizontalSpacer_8">
@@ -4516,30 +4531,6 @@ border-color: rgb(255, 255, 255);
             </size>
            </property>
           </spacer>
-         </item>
-         <item row="5" column="1" colspan="6">
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(132, 132, 132);
-border-width: 2px;        
-  border-style: solid;
-border-color: rgb(255, 255, 255);
-  border-radius: 15px;
-  padding:5px;</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="placeholderText">
-            <string>Secret Code</string>
-           </property>
-          </widget>
          </item>
          <item row="10" column="4">
           <spacer name="horizontalSpacer_60">
@@ -4679,7 +4670,7 @@ border-width: 2px;
            </property>
           </widget>
          </item>
-         <item row="1" column="3" colspan="2">
+         <item row="1" column="3" colspan="2" alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_7">
            <property name="maximumSize">
             <size>
@@ -4701,7 +4692,31 @@ border-width: 2px;
            </property>
           </widget>
          </item>
-         <item row="4" column="1" colspan="6">
+         <item row="5" column="3" colspan="2">
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(132, 132, 132);
+border-width: 2px;        
+  border-style: solid;
+border-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding:5px;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="placeholderText">
+            <string>Secret Code</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3" colspan="2">
           <widget class="QLineEdit" name="lineEdit_password_signUp">
            <property name="font">
             <font>
@@ -4728,35 +4743,27 @@ border-color: rgb(255, 255, 255);
            </property>
           </widget>
          </item>
-         <item row="6" column="3" colspan="2" alignment="Qt::AlignHCenter">
-          <widget class="QPushButton" name="pushButton_SignUp">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>190</width>
-             <height>0</height>
-            </size>
-           </property>
+         <item row="3" column="3" colspan="2">
+          <widget class="QLineEdit" name="lineEdit_username_signUp">
            <property name="font">
             <font>
              <pointsize>16</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(0, 170, 127);
+            <string notr="true">color: rgb(255, 255, 255);
+
 border-width: 2px;        
   border-style: solid;
+border-color: rgb(255, 255, 255);
   border-radius: 20px;
   padding:5px;</string>
            </property>
-           <property name="text">
-            <string>SignUp</string>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="placeholderText">
+            <string>Create your username</string>
            </property>
           </widget>
          </item>
@@ -4770,30 +4777,103 @@ border-width: 2px;
  </widget>
  <tabstops>
   <tabstop>lineEdit_username</tabstop>
+  <tabstop>lineEdit_password</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_22</tabstop>
+  <tabstop>pushButton_24</tabstop>
+  <tabstop>pushButton_27</tabstop>
   <tabstop>pushButton_goToStudents</tabstop>
+  <tabstop>pushButton_goTOPRofessors</tabstop>
   <tabstop>pushButton_goToCourses</tabstop>
+  <tabstop>pushButton_21</tabstop>
+  <tabstop>lineEdit_search_stud_ID</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_11</tabstop>
+  <tabstop>pushButton_back</tabstop>
+  <tabstop>pushButton_homepagestud</tabstop>
+  <tabstop>lineEdit_input_firstnamestudent</tabstop>
+  <tabstop>lineEdit_input_lastnamestud</tabstop>
   <tabstop>lineEdit_input_emailstud</tabstop>
-  <tabstop>pushButton_19</tabstop>
+  <tabstop>lineEdit_input_mobilestud</tabstop>
+  <tabstop>lineEdit_input_agestud</tabstop>
+  <tabstop>comboBox_input_gradestud</tabstop>
+  <tabstop>pushButton_addstud</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>lineEdit_output_firstname_stud</tabstop>
+  <tabstop>lineEdit_output_lastname_stud</tabstop>
+  <tabstop>lineEdit_output_email_stud</tabstop>
+  <tabstop>lineEdit_output_mobile_stud</tabstop>
+  <tabstop>lineEdit_output_age_stud</tabstop>
+  <tabstop>lineEdit_output_grade_stud</tabstop>
+  <tabstop>tableWidget_stud1</tabstop>
+  <tabstop>pushButton_9</tabstop>
   <tabstop>pushButton_13</tabstop>
+  <tabstop>comboBox_searchcourse</tabstop>
   <tabstop>pushButton_14</tabstop>
-  <tabstop>pushButton_20</tabstop>
+  <tabstop>lineEdit_firstname_addcourse_stud</tabstop>
+  <tabstop>lineEdit_lastname_addcourse_stud</tabstop>
+  <tabstop>comboBox_choosecourse_addstud</tabstop>
+  <tabstop>lineEdit_scoredmarks_addstud</tabstop>
+  <tabstop>pushButton_19</tabstop>
   <tabstop>lineEdit_addcourse_firstname_addprof</tabstop>
+  <tabstop>lineEdit_addcourse_lastname_addprof</tabstop>
   <tabstop>comboBox_choose_course_addprof</tabstop>
-  <tabstop>lineEdit_input_coursecode</tabstop>
+  <tabstop>pushButton_20</tabstop>
+  <tabstop>pushButton_15</tabstop>
+  <tabstop>pushButton_16</tabstop>
   <tabstop>lineEdit_input_coursename</tabstop>
-  <tabstop>comboBox_input_day</tabstop>
+  <tabstop>lineEdit_input_coursecode</tabstop>
   <tabstop>comboBox_input_lecturehall</tabstop>
-  <tabstop>pushButton_6</tabstop>
+  <tabstop>comboBox_input_day</tabstop>
   <tabstop>comboBox_input_hour</tabstop>
+  <tabstop>pushButton_6</tabstop>
+  <tabstop>pushButton_17</tabstop>
+  <tabstop>pushButton_18</tabstop>
+  <tabstop>lineEdit_output_coursename</tabstop>
   <tabstop>lineEdit_output_course_code</tabstop>
+  <tabstop>lineEdit_output_lecturehall</tabstop>
+  <tabstop>lineEdit_output_day</tabstop>
+  <tabstop>lineEdit_output_hour</tabstop>
+  <tabstop>tableWidget_courses</tabstop>
+  <tabstop>pushButton_10</tabstop>
   <tabstop>lineEdit_firstname_searchProf</tabstop>
+  <tabstop>lineEdit_lastname_search_prof</tabstop>
+  <tabstop>pushButton_8</tabstop>
+  <tabstop>pushButton_7</tabstop>
+  <tabstop>pushButton_32</tabstop>
+  <tabstop>pushButton_26</tabstop>
+  <tabstop>pushButton_25</tabstop>
   <tabstop>lineEdit_input_firstname_prof</tabstop>
-  <tabstop>pushButton_addstud_4</tabstop>
+  <tabstop>lineEdit_input_lastname_prof</tabstop>
   <tabstop>lineEdit_input_email_prof</tabstop>
   <tabstop>lineEdit_input_mobile_prof</tabstop>
   <tabstop>lineEdit_input_age_prof</tabstop>
+  <tabstop>comboBox_input_title_prof</tabstop>
+  <tabstop>pushButton_addstud_4</tabstop>
+  <tabstop>pushButton_42</tabstop>
+  <tabstop>pushButton_43</tabstop>
   <tabstop>lineEdit_output_firstname_prof</tabstop>
-  <tabstop>lineEdit_scoredmarks_addstud</tabstop>
+  <tabstop>lineEdit_output_lastname_prof</tabstop>
+  <tabstop>lineEdit_output_email_prof</tabstop>
+  <tabstop>lineEdit_output_mobile_prof</tabstop>
+  <tabstop>lineEdit_output_age_prof</tabstop>
+  <tabstop>tableWidget_displayprofessor</tabstop>
+  <tabstop>pushButton_23</tabstop>
+  <tabstop>pushButton_12</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>tableWidget_Showall_Stud</tabstop>
+  <tabstop>pushButton_29</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>pushButton_30</tabstop>
+  <tabstop>tableWidget_2</tabstop>
+  <tabstop>pushButton_31</tabstop>
+  <tabstop>lineEdit_username_signUp</tabstop>
+  <tabstop>lineEdit_password_signUp</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>pushButton_SignUp</tabstop>
+  <tabstop>pushButton_28</tabstop>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>

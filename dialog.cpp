@@ -7,7 +7,7 @@
 #include<iostream>
 #include<string>
 int id=1;
-
+int index=0;
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Dialog)
@@ -17,7 +17,6 @@ Dialog::Dialog(QWidget *parent)
     ui->stackedWidget->setCurrentIndex(0);
     ui->comboBox_input_hour->setEnabled(false);
     usernamePassword.push_back(std::make_pair("admin","admin"));
-
 
     QTableWidget *table=ui->tableWidget_Showall_Stud;
     table->setColumnCount(7);
@@ -217,11 +216,18 @@ void Dialog::on_pushButton_goToStudents_clicked()
 }
 void Dialog::on_pushButton_4_clicked()
 {
-      ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(2);
+    QTableWidget*studtable=ui->tableWidget_stud1;
+    studtable->clearContents();
+    studtable->setRowCount(1);
 }
 void Dialog::on_pushButton_5_clicked()
 {
+
     ui->stackedWidget->setCurrentIndex(1);
+    QTableWidget*studtable=ui->tableWidget_stud1;
+    studtable->clearContents();
+    studtable->setRowCount(1);
 
 }
 void Dialog::on_pushButton_15_clicked()
@@ -374,6 +380,7 @@ void Dialog::on_pushButton_12_clicked()
 void Dialog::on_pushButton_11_clicked()
 {
      ui->stackedWidget->setCurrentIndex(11);
+     index=2;
 }
 //Student code
 bool Dialog:: verifyName(QString name){
@@ -427,7 +434,7 @@ void Dialog::on_pushButton_SignUp_clicked()
 }
 void Dialog::on_pushButton_23_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(index);
 }
 void Dialog::on_pushButton_27_clicked()
 {
@@ -481,7 +488,6 @@ void Dialog::on_pushButton_addstud_clicked()
     }
     registeredStudents.push_back(newstudent);
     QTableWidget*table=ui->tableWidget_Showall_Stud;
-    table->setStyleSheet("QTableWidget {color: rgb(0,0,0); background-color: white;}");
 
     table->insertRow(table->rowCount());
     QTableWidgetItem*firstnamewidget=new QTableWidgetItem(firstname);
@@ -582,6 +588,18 @@ void Dialog::on_pushButton_6_clicked()
     QString courselecturhall=ui->comboBox_input_lecturehall->currentText();
     QString courseday=ui->comboBox_input_day->currentText();
     QString  Interval=ui->comboBox_input_hour->currentText();
+    if(!coursename.isEmpty()&&!coursecode.isEmpty()&&!courselecturhall.isEmpty()&&!courseday.isEmpty()&&!Interval.isEmpty()){
+
+        }
+        else{
+        QMessageBox mb("Warning", "Invalid Input.",QMessageBox::NoIcon,
+                       QMessageBox::Ok | QMessageBox::Default,
+                       QMessageBox::NoButton,
+                       QMessageBox::NoButton);
+        mb.setStyleSheet("QMessageBox {color: rgb(255, 255, 255);}");
+        mb.exec();;
+            return;
+        }
     Interval.toStdString();
 
     int startHour;
@@ -629,7 +647,7 @@ void Dialog::on_pushButton_6_clicked()
     addToStud->addItem(newcourse.getName());
     addToProf->addItem(newcourse.getName());
     addToSearch->addItem(newcourse.getName());
-    timeSlots[lecturHallIndex][courseday.toStdString()].erase(startHour);
+    timeSlots[lecturHallIndex][courseday.toStdString()].erase( startHour + (12*(startHour < 8) ) );
 }
 
 void Dialog::on_pushButton_14_clicked()
@@ -720,7 +738,7 @@ void Dialog::on_pushButton_14_clicked()
        ui->comboBox_searchcourse->setCurrentIndex(-1);
     }
     else{
-        QMessageBox mb("Warning", "This Course is not Registered.",QMessageBox::NoIcon,
+        QMessageBox mb("Warning", "Please select a course First.",QMessageBox::NoIcon,
                        QMessageBox::Ok | QMessageBox::Default,
                        QMessageBox::NoButton,
                        QMessageBox::NoButton);
@@ -976,6 +994,11 @@ void Dialog::generateHours(){
             timeInterval+=" AM";
         courseHour->addItem(timeInterval);
     }
+    int numberofElemnts = ui->comboBox_input_hour->count();
+        if(!numberofElemnts){
+            courseHour->setPlaceholderText("No available halls");
+            courseHour->setEnabled(false);
+        }
 }
 
 void Dialog::on_pushButton_28_clicked()
@@ -1074,6 +1097,6 @@ void Dialog::on_pushButton_31_clicked()
 void Dialog::on_pushButton_32_clicked()
 {
     ui->stackedWidget->setCurrentIndex(11);
-    ui->tabWidget->setTabEnabled(1,true);
+    index=8;
 }
 
