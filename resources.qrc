@@ -18,7 +18,4 @@
         <file>img/Untitled design (3).jpg</file>
         <file>img/333.png</file>
     </qresource>
-    <qresource prefix="/csv">
-        <file>csv/trash.csv</file>
-    </qresource>
 </RCC>

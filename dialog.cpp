@@ -600,6 +600,18 @@ void Dialog::on_pushButton_6_clicked()
     QString courselecturhall=ui->comboBox_input_lecturehall->currentText();
     QString courseday=ui->comboBox_input_day->currentText();
     QString  Interval=ui->comboBox_input_hour->currentText();
+
+    QFile file("D:/Project Data/learning_managment_system/csv/Courses.csv"); //hena hot path elresource file
+            file.open(QIODevice::Append | QIODevice::Text);
+
+            // Write data to file
+            QTextStream stream(&file);
+            QString separator(",");
+            stream <<coursename<<','<<coursecode<<','<<courselecturhall<<','<<courseday<<','<<Interval<<"\n";
+
+
+            stream.flush();
+            file.close();
     if(!coursename.isEmpty()&&!coursecode.isEmpty()&&!courselecturhall.isEmpty()&&!courseday.isEmpty()&&!Interval.isEmpty()){
 
         }
@@ -709,6 +721,7 @@ void Dialog::on_pushButton_14_clicked()
        // ui->tableWidget_courses->setEnabled(false);
         QTableWidget*tablecourses=ui->tableWidget_courses;
         tablecourses->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
        vector<Student*>enrolledStudnets=registeredCourses[index].getEnrolledStudentsInCourses();
        vector<Professor*> profName=registeredCourses[index].getProfessors();
        for (int i = 0; i < enrolledStudnets.size(); ++i) {
@@ -724,6 +737,7 @@ void Dialog::on_pushButton_14_clicked()
            qDebug()<<enrolledStudnets[i]->getId();
            tablecourses->setItem(tablecourses->rowCount()-1,3,idwidget);
            tablecourses->insertRow(tablecourses->rowCount());
+
            }
 
        for (int i = 0; i < profName.size(); ++i) {
@@ -733,7 +747,6 @@ void Dialog::on_pushButton_14_clicked()
                if(profName.size()>tablecourses->rowCount())
                   tablecourses->insertRow(tablecourses->rowCount());
                 tablecourses->setItem(i,2,profnamewidget);
-
 
        }
        //for (int i = 0; i < profName.size(); ++i) {
@@ -882,6 +895,17 @@ void Dialog::on_pushButton_addstud_4_clicked()
     QString mobile=ui->lineEdit_input_mobile_prof->text();
     QString titleofprof=ui->comboBox_input_title_prof->currentText();
     QString ageofprof=ui->lineEdit_input_age_prof->text();
+    QFile file("D:/Project Data/learning_managment_system/csv/Prof.csv"); //hena hot path elresource file
+            file.open(QIODevice::Append | QIODevice::Text);
+
+            // Write data to file
+            QTextStream stream(&file);
+            QString separator(",");
+            stream <<id<<','<<firstname<<','<<lastname<<','<<ageofprof<<','<<titleofprof<<','<<mobile<<','<<email<<"\n";
+
+
+            stream.flush();
+            file.close();
     bool ok;
     int age2=ageofprof.toInt(&ok,10);
     if(ui->lineEdit_input_email_prof->hasAcceptableInput()&&age2>0&&age2<100&&verifyName(firstname)&&verifyName(lastname)){
@@ -937,9 +961,13 @@ void Dialog::on_tableWidget_Showall_Stud_cellDoubleClicked(int row, int column)
 }
 void Dialog::on_tableWidget_courses_cellDoubleClicked(int row, int column)
 {
+//    if(registeredStudents.empty())
+//        return;
+    QTableWidget*table=ui->tableWidget_courses;
+
     if(column!=3)
         return;
-    QTableWidget*table=ui->tableWidget_courses;
+
     QString getid=table->item(row,column)->text();
     ui->lineEdit_search_stud_ID->setText(getid);
     on_pushButton_3_clicked();
