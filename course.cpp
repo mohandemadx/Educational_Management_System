@@ -1,15 +1,14 @@
-//
-// Created by 10 on 12/12/2022.
-//
-
 #include "Course.h"
 #include "Student.h"
+
 Course::Course(QString &name, QString &code, QString &lectureHall, QString &day, int &hour) {
     setName(name);
     setCode(code);
     setTime(day,hour);
     setLectureHall(lectureHall);
 }
+
+// FUNCTIONS
 
 QString Course::getName() const {
     return name;
@@ -30,7 +29,6 @@ pair<QString,int> Course::getTime() const {
 bool Course::setName(QString &name) {
    this->name=name;
     return true;
-
 }
 
 bool Course::setCode(QString &code) {
