@@ -1,9 +1,6 @@
-//
-// Created by Mourad on 12/19/2022.
-//
-
 #include "Person.h"
 #include<QString>
+
 Person::Person(QString &firstName, QString &lastName, QString &mobile, QString &email, int &age) {
     setFirstName(firstName);
     setLastName(lastName);
