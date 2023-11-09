@@ -1,12 +1,9 @@
-//
-// Created by 10 on 12/12/2022.
-//
-
 #ifndef LEARNING_MANAGEMENT_SYSTEM_COURSE_H
 #define LEARNING_MANAGEMENT_SYSTEM_COURSE_H
 #include"Professor.h"
 #include "Student.h"
 #include<QString>
+
 using namespace std;
 class Course {
 private:
@@ -50,9 +47,6 @@ public:
     vector<Student*> getEnrolledStudentsInCourses();
 
     vector<Professor*>getProfessors();
-
-
-
 };
 
 
